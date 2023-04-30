@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
@@ -54,19 +56,78 @@
 
     <div class="container">
         <div class="contact-box">
-        <div class="left"></div>
-        <div class="right"></div>
-        <h2>Contactenos</h2>
-        <input type="text" class="field" placeholder="Tu nombre">
-        <input type="text" class="field" placeholder="Tu correo electronico">
-        <input type="text" class="field" placeholder="Tu telefono">
-        <textarea class="field area" placeholder="Mensaje"></textarea>
-        <button class="btn">Send</button>
+            <div class="left"></div>
+            <div class="right"></div>
+            <h2>Contactenos</h2>
+            <input type="text" class="field" placeholder="Tu nombre">
+            <input type="text" class="field" placeholder="Tu correo electronico">
+            <input type="text" class="field" placeholder="Tu telefono">
+            <textarea class="field area" placeholder="Mensaje"></textarea>
+            <button class="btn">Send</button>
+
+        </div>
 
     </div>
-    
-</div>
-</div>
+
+    <script>
+        $(document).ready(function () {
+            $('.btn').click(function (event) {
+                event.preventDefault();
+
+                let error = false;
+
+                const name = $('input[placeholder="Tu nombre"]').val();
+                if (name.length > 30) {
+                    $('input[placeholder="Tu nombre"]').css("border-color", "red");
+                    $('input[placeholder="Tu nombre"]').after("<div class='error-message'>El nombre no puede tener más de 30 caracteres</div>");
+                    error = true;
+                }
+
+                const email = $('input[placeholder="Tu correo electronico"]').val();
+                if (!email.includes('@')) {
+                    $('input[placeholder="Tu correo electronico"]').css("border-color", "red");
+                    $('input[placeholder="Tu correo electronico"]').after("<div class='error-message'>El correo electrónico debe contener el símbolo @</div>");
+                    error = true;
+                }
+
+                const phone = $('input[placeholder="Tu telefono"]').val();
+                if (!phone.match(/^9\d{8}$/)) {
+                    $('input[placeholder="Tu telefono"]').css("border-color", "red");
+                    $('input[placeholder="Tu telefono"]').after("<div class='error-message'>El número de teléfono debe comenzar con el número 9 y contener 9 dígitos numéricos</div>");
+                    error = true;
+                }
+
+                const message = $('textarea[placeholder="Mensaje"]').val().replace(/\s+/g, '');
+                if (message.length > 300) {
+                    $('textarea[placeholder="Mensaje"]').css("border-color", "red");
+                    $('textarea[placeholder="Mensaje"]').after("<div class='error-message'>El mensaje no puede contener más de 300 caracteres</div>");
+                    error = true;
+                }
+
+                if (!name || !email || !phone || !message) {
+                    $('.field').each(function () {
+                        if ($(this).val() === '') {
+                            $(this).css("border-color", "red");
+                            $(this).after("<div class='error-message'>Este campo es obligatorio</div>");
+                            error = true;
+                        }
+                    });
+                }
+
+                if (!error) {
+                    alert("El formulario se ha enviado con éxito.");
+                    // Aquí iría el código para enviar el formulario
+                }
+            });
+
+            $('.field').focus(function () {
+                $(this).css("border-color", "#ddd");
+                $(this).siblings(".error-message").remove();
+            });
+        });
+
+
+    </script>
 
 
 

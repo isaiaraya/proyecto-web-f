@@ -13,18 +13,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        body{
+        body {
             background: #ff0000;
-            background: linear-gradient(to right,#ff0000,#ff0000);
+            background: linear-gradient(to right, #ff0000, #ff0000);
 
         }
-        
-            
-        
     </style>
 
 
-    
+
 </head>
 
 <body>
@@ -58,12 +55,36 @@
                     <li class="nav-item">
                         <a href="cuenta.html" class="nav-link">Cuenta</a>
                     </li>
+
+                    <div>
+                        <ul>
+                            <li class="submenu"></li>
+                            <img src="img/car.svg" id="img-carrito" alt="">
+                            <div id="carrito">
+                                <table id="lista-carrito">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+
+                            </div>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>
+        </div>
     </nav>
 
-    <div class="container w-75 bg-white mt-5 rounded shadow">
+    <div class="container w-75 bg-white mt-5 rounded shadow mx-auto">
         <div class="row align-items-stretch ">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
 
@@ -78,15 +99,15 @@
                 <form action="#">
                     <div class="mb-4">
                         <label for="user" class="form-label">Nombre De Usuario</label>
-                        <input type="user" class="form-control" name="user">
+                        <input type="user" class="form-control " name="user">
                     </div>
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo Electronico</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control " name="email">
                     </div>
                     <div class="mb-4">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control " name="password">
                     </div>
                     <div class="mb-4 form-check">
                         <input type="checkbox" name="connected" class="form-check-input" id="">
@@ -100,7 +121,7 @@
                         <span><a href="#">Recuperar Contraseña</a></span>
                     </div>
 
-                    
+
                 </form>
 
 
@@ -152,8 +173,8 @@
 
 
 
-    
- 
+
+
 
 
     <div class="container-fluid fixed-bottom">
@@ -199,7 +220,7 @@
         </div>
     </div>
 
-    
+
 
 
 

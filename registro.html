@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style4.css">
 
     <style>
         body {
@@ -53,6 +54,28 @@
                     <li class="nav-item">
                         <a href="cuenta.html" class="nav-link">Cuenta</a>
                     </li>
+                    <div>
+                        <ul>
+                            <li class="submenu"></li>
+                            <img src="img/car.svg" id="img-carrito" alt="">
+                            <div id="carrito">
+                                <table id="lista-carrito">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                
+                            </div>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -74,18 +97,22 @@
                     <div class="mb-4">
                         <label for="user" class="form-label">Nombre De Usuario</label>
                         <input type="user" class="form-control" name="user" id="user" required>
+                        <span id="username-error" ></span>
                     </div>
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo Electronico</label>
                         <input type="email" class="form-control" name="email" id="email" required>
+                        <span id="email-error" ></span>
                     </div>
                     <div class="mb-4">
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" name="password" id="password" required>
+                       <span id="password-error" ></span>
                     </div>
                     <div class="mb-4">
                         <label for="phone" class="form-label">Telefono</label>
                         <input type="phone" class="form-control" name="phone" id="phone" required>
+                        <span id="phone-error" ></span>
                     </div>
 
                     <div class="d-grid">
